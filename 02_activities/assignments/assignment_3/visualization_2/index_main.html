@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Crime Map Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- TopoJSON -->
+    <script src="https://unpkg.com/topojson@3"></script>
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <!-- D3 Tooltip -->
+    <script src="https://unpkg.com/d3-tip@0.9.1/dist/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Toronto Neighborhood Crime Rates</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="year-select">Select Year:</label>
+                <select id="year-select"></select>
+            </div>
+            <div class="control-group">
+                <label for="crime-select">Select Crime Type:</label>
+                <select id="crime-select">
+                    <option value="ALL">All Crimes (Total)</option>
+                    <!-- Crime types will be added dynamically -->
+                </select>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="legend-container">
+                <h3>Crime Rate per 100,000 Population</h3>
+                <div id="legend"></div>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>Neighborhood Information</h2>
+            <div id="neighborhood-info">
+                <p>Hover over a neighborhood to see details</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="data_loader.js"></script>
+    <script src="map_script.js"></script>
+</body>
+</html>
